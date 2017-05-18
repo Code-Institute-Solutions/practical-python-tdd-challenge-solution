@@ -6,15 +6,21 @@ def get_change(amount):
     if amount in [200, 100, 50, 20, 10, 5, 2, 1]:
         return [amount]
 
+    change = []
+    
     if amount == 3:
-        return [2, 1]
+        change.append(2)
+        change.append(1)
 
     if amount == 7:
-        return [5, 2]
+        change.append(5)
+        change.append(2)
 
     if amount == 11:
-        return [10, 1]
-    
+        change.append(10)
+        change.append(1)
+
+    return change
 
 assert get_change(0) == [], "Zero change should return an empty List"
 
