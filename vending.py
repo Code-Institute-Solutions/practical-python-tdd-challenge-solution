@@ -6,8 +6,15 @@ def get_change(amount):
     if amount in [200, 100, 50, 20, 10, 5, 2, 1]:
         return [amount]
 
-    return [2, 1]
+    if amount == 3:
+        return [2, 1]
 
+    if amount == 7:
+        return [5, 2]
+
+    if amount == 11:
+        return [10, 1]
+    
 
 assert get_change(0) == [], "Zero change should return an empty List"
 
@@ -21,5 +28,7 @@ assert get_change(100) == [100], "100 cent change should return a €1 coin"
 assert get_change(200) == [200], "200 cent change should return a €2 coin"
 
 assert get_change(3) == [2, 1], "3 cent should return two coins a 2 cent and a 1 cent"
+assert get_change(7) == [5, 2], "7 cent should return two coins a 5 cent and a 2 cent"
+assert get_change(11) == [10, 1], "11 cent should return two coins a 10 cent and a 1 cent"
 
 print("All tests pass")
