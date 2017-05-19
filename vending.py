@@ -8,17 +8,10 @@ def get_change(amount):
 
     change = []
     
-    if amount == 3:
-        change.append(2)
-        change.append(1)
-
-    if amount == 7:
-        change.append(5)
-        change.append(2)
-
-    if amount == 11:
-        change.append(10)
-        change.append(1)
+    for coin in [200, 100, 50, 20, 10, 5, 2, 1]:
+        if coin <= amount:
+            change.append(coin)
+            amount -= coin
 
     return change
 
