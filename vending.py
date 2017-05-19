@@ -1,10 +1,11 @@
 
 eur_coins = [200, 100, 50, 20, 10, 5, 2, 1]
+us_coins = [100, 50, 25, 10, 5, 1]
 
-def get_change(amount):
+def get_change(amount, coins = eur_coins):
     change = []
     
-    for coin in eur_coins:
+    for coin in coins:
         while coin <= amount:
             change.append(coin)
             amount -= coin
@@ -27,5 +28,7 @@ assert get_change(7) == [5, 2], "7 cent should return two coins a 5 cent and a 2
 assert get_change(11) == [10, 1], "11 cent should return two coins a 10 cent and a 1 cent"
 
 assert get_change(9) == [5, 2, 2], "9 cent should return three coins a 10 cent and two 2 cent"
+
+assert get_change(35, us_coins) == [25, 10], "In US 35 cent should return two coins a 25 cent and a 10 cent"
 
 print("All tests pass")
