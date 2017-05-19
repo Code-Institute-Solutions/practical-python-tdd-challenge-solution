@@ -9,7 +9,7 @@ def get_change(amount):
     change = []
     
     for coin in [200, 100, 50, 20, 10, 5, 2, 1]:
-        if coin <= amount:
+        while coin <= amount:
             change.append(coin)
             amount -= coin
 
@@ -29,5 +29,7 @@ assert get_change(200) == [200], "200 cent change should return a €2 coin"
 assert get_change(3) == [2, 1], "3 cent should return two coins a 2 cent and a 1 cent"
 assert get_change(7) == [5, 2], "7 cent should return two coins a 5 cent and a 2 cent"
 assert get_change(11) == [10, 1], "11 cent should return two coins a 10 cent and a 1 cent"
+
+assert get_change(9) == [5, 2, 2], "9 cent should return three coins a 10 cent and two 2 cent"
 
 print("All tests pass")
